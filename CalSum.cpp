@@ -10,7 +10,7 @@
 long CalSum(int N)
 {
     // TODO<hieuvu96>: need to work on this
-	return 0; // <haitv>: Not this not correct
+	return 1; // <haitv>: Not this not correct
 }
 
 int main()
