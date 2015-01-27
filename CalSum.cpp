@@ -9,13 +9,13 @@
 
 long CalSum(int N)
 {
-    // TODO: fill in the code here
-	return 0;
+    // TODO<hieuvu96>: need to work on this
+	return 0; // <haitv>: Not this not correct
 }
 
 int main()
 {
-    // TODO: write your tests here
+    // TODO<hieuvu96>: do more testings
 	std::cout << "Return: " << CalSum(1) << std::endl;
     return 0;
 }
