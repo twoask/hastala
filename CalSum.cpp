@@ -3,6 +3,10 @@
  *
  * Calculate the sum of all number from 1 to N (given N).
  *
+ * Requested: Jan 26th, 2015
+ *
+ * Due date: Jan 27th, 2015
+ *
  * Signature: long CalSum(int N)
  */
 #include <iostream>
