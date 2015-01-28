@@ -10,12 +10,15 @@
  * Signature: long CalSum(int N)
  */
 #include <iostream>
+using namespace std;
 #include <cassert>
 
 long CalSum(int N)
 {
-    // TODO<hieuvu96>: need to work on this
-	return 0; // <haitv>: Not this not correct
+	int a = 
+    cout << "Enter a number, any number" << endl;
+	cin << 
+	return 0;
 }
 
 /*
@@ -36,3 +39,5 @@ int main()
 	std::cout << "Return: " << CalSum(1) << std::endl;
     return 0;
 }
+
+
