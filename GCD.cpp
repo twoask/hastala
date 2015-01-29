@@ -35,13 +35,13 @@ ulong GCD(ulong a, ulong b)
     }
     if ( c = 1 )
     {
-        cout << "GCD(" <<a<< "," <<b<< ") == " << 1 << endl;
-        return 0;
+        cout << "GCD(" <<a<< "," <<b<< ") = " << 1 << endl;
+        return 1;
     }
     else
     {
-        cout << "GCD(" <<a<< "," <<b<< ") == " << c << endl;
-        return 0;
+        cout << "GCD(" <<a<< "," <<b<< ") = " << c << endl;
+        return c;
     }
 }
 
