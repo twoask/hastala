@@ -14,13 +14,35 @@
  * Signature: unsigned long GCD(unsigned long A, unsigned long B)
  */
 #include <iostream>
+using namespace std;
 #include <cassert>
+#include <algorithm>
 
 #define ulong unsigned long
 
-ulong GCD(ulong A, ulong B)
+ulong GCD(ulong a, ulong b)
 {
-	return 0;
+    ulong x, y, c;
+    x = max(a,b);
+    y = min(a,b); 
+    c = x - y;
+    while ( c!= 1 && c!=y )
+    {
+        x = y;
+        y = c;
+        c = x - y;
+
+    }
+    if ( c = 1 )
+    {
+        cout << "GCD(" <<a<< "," <<b<< ") == " << 1 << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "GCD(" <<a<< "," <<b<< ") == " << c << endl;
+        return 0;
+    }
 }
 
 /*
