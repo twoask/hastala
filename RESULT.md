@@ -1,4 +1,5 @@
-# RESULTS FOR ALL PROBLEM SET
+## RESULTS FOR ALL PROBLEM SET
 * CalSum    : passed
 * GCD       : failed
-* IntToEng  : undecided
+* IntToEng  : unfinished
+* SumTwo    : unfinished
