@@ -14,10 +14,10 @@
 
 # Points to the root of Google Test, relative to where this file is.
 # Remember to tweak this if you move this file.
-GTEST_DIR = ./gtest-1.7.0
+GTEST_DIR = ..
 
 # Where to find user code.
-USER_DIR = .
+USER_DIR = ../samples
 
 # Flags passed to the preprocessor.
 # Set Google Test's header directory as a system directory, such that
@@ -29,7 +29,7 @@ CXXFLAGS += -g -Wall -Wextra -pthread
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = unittest
+TESTS = sample1_unittest
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -67,27 +67,16 @@ gtest.a : gtest-all.o
 gtest_main.a : gtest-all.o gtest_main.o
 	$(AR) $(ARFLAGS) $@ $^
 
-# Builds the unit test.  A test should link with either gtest.a or
+# Builds a sample test.  A test should link with either gtest.a or
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
-calsum.o : $(USER_DIR)/CalSum.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/CalSum.cpp
+sample1.o : $(USER_DIR)/sample1.cc $(USER_DIR)/sample1.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/sample1.cc
 
-checksort.o : $(USER_DIR)/CheckSort.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/CheckSort.cpp
+sample1_unittest.o : $(USER_DIR)/sample1_unittest.cc \
+                     $(USER_DIR)/sample1.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/sample1_unittest.cc
 
-sumtwo.o : $(USER_DIR)/SumTwo.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/SumTwo.cpp
-
-inttoeng.o : $(USER_DIR)/IntToEng.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/IntToEng.cpp
-
-gcd.o : $(USER_DIR)/GCD.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/GCD.cpp
-
-unittest.o : $(USER_DIR)/unittest.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/unittest.cpp
-
-unittest : calsum.o checksort.o sumtwo.o gcd.o inttoeng.o unittest.o gtest_main.a
+sample1_unittest : sample1.o sample1_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
