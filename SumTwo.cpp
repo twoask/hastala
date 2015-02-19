@@ -8,10 +8,6 @@
  * [1,2,3,4,5], N = 5 ==> return true (2 + 3 == 5)
  * [1,2,3,4,5], N = 15 ==> return false (no pairs could add up to 15)
  *
- * Requested: Feb 1st, 2015
- *
- * Due date: Feb 3rd, 2015
- *
  * Signature: bool SumTwo(std::vector<int> nList, int N)
  * - @v: list of integers
  * - @N: value in which to find the two number who sum equals to
@@ -31,23 +27,3 @@ bool SumTwo(std::vector<int> v, int N)
 {
     return false;
 }
-
-/*
- * Unit test function.
- */
-void SumTwoTest()
-{
-    int array[] = {1, 2, 3, 4, 5};
-    std::vector<int> v(array, array + 5);
-    assert(SumTwo(v, 5) == true);
-    assert(SumTwo(v, 15) == false);
-}
-
-int main()
-{
-    // Do Unit Test
-    SumTwoTest();
-    return 0;
-}
-
-

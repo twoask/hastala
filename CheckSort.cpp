@@ -10,10 +10,6 @@
  * [5,4,3,2,1] ==> return true (array is sorted)
  * [1,2,3,4,3] ==> return false (array is not sorted)
  *
- * Requested: Feb 2nd, 2015
- *
- * Due date: Feb 4th, 2015
- *
  * Signature: bool CheckSort(std::vector<int> nList)
  * - @v: list of integers, may already be sorted
  * - @return: true or false
@@ -27,33 +23,9 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include "all_functions.h"
 
 bool CheckSort(std::vector<int> v)
 {
     return false;
 }
-
-/*
- * Unit test function.
- */
-void CheckSortTest()
-{
-    int array[] = {1, 2, 3, 4, 5};
-    std::vector<int> v(array, array + 5);
-    assert(CheckSort(v) == true);
-    int array2[] = {1, 2, 3, 4, 3};
-    std::vector<int> v2(array2, array2 + 5);
-    assert(CheckSort(v2) == false);
-    int array3[] = {5, 4, 3, 2, 1};
-    std::vector<int> v3(array3, array3 + 5);
-    assert(CheckSort(v3) == true);
-}
-
-int main()
-{
-    // Do Unit Test
-    CheckSortTest();
-    return 0;
-}
-
-
