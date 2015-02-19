@@ -23,28 +23,41 @@ using namespace std;
 
 ulong GCD(ulong a, ulong b)
 {
-    ulong x, y, c;
-    x = max(a,b);
-    y = min(a,b); 
-    c = x - y;
-    while ( c!= 1 && c!=y ) // <twoask>: wrong logic
+    ulong max, min;
+    cin >> a;
+    cin >> b;
+    
+    if (a == b)
     {
-        x = y;
-        y = c;
-        c = x - y;
-
+    cout << "the GCD of 2 numbers is " << a << endl;
+    return a;
     }
-    if ( c = 1 ) // <twoask>: basic syntax is wrong here
+    
+    if (a>b)
     {
-        cout << "GCD(" <<a<< "," <<b<< ") = " << 1 << endl;
-        return 1;
+    max = a;
+    min = b;
     }
-    else
+    else if (b>a)
     {
-        cout << "GCD(" <<a<< "," <<b<< ") = " << c << endl;
-        return c;
+    max = b;
+    min = a;
     }
+    
+    if (max % min == 0)
+    { 
+    cout << "the GCD of 2 numbers is " << min << endl;
+    return min;
+    }
+    ulong result = min;
+    while (!(max % result == 0 && min % result == 0))
+    {
+    result--;
+    }
+    cout <<"the GCD of 2 numbers is " << result << endl;
+    return result;
 }
+    
 
 /*
  * Unit test function for CalSum.
