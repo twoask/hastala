@@ -1,6 +1,6 @@
 ## RESULT FOR ALL PROBLEMS
 * CalSum    : passed
-* GCD       : failed, hit some infinite loops
+* GCD       : passed
 * IntToEng  : unfinished
 * SumTwo    : unfinished
 * CheckSort : unfinished
