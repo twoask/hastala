@@ -118,4 +118,29 @@ TEST(GCDTest, Correctness) {
     EXPECT_EQ(1, GCD(10,11));
 }
 
+/*
+ * Unit test function for GCD.
+ */
+class MinRotateTest : public ::testing::Test {
+  protected:
+    MinRotateTest();
+
+    virtual ~MinRotateTest();
+
+    virtual void SetUp() {}
+
+    virtual void TearDown() {}
+};
+
+TEST(MinRotateTest, Correctness) {
+    int arr[5] = { 1, 3, 5, 7, 9 };
+    std::deque<int> v(arr, arr + 5);
+    for (int i = 0; i < 5; i++) {
+        EXPECT_EQ(1, FindMinRotate(v));
+        int temp = v.back();
+        v.pop_back();
+        v.push_front(temp);
+    }
+}
+
 }  // namespace

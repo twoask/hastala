@@ -5,8 +5,10 @@
 #ifndef _ALL_FUNCTIONS_H
 #define _ALL_FUNCTIONS_H
 
+#include <iostream>
 #include <string>
 #include <vector>
+#include <deque>
 
 /*
  * Calculate the sum of all number from 1 to N (given N).
@@ -37,5 +39,10 @@ std::string IntToEng(int N);
  */
 typedef unsigned long ulong;
 ulong GCD(ulong a, ulong b);
+
+/*
+ * Find min value in a rotate sorted array.
+ */
+int FindMinRotate(const std::deque<int> v);
 
 #endif  // _ALL_FUNCTIONS_

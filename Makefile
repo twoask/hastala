@@ -86,8 +86,11 @@ IntToEng.o : $(USER_DIR)/IntToEng.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADER
 GCD.o : $(USER_DIR)/GCD.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/GCD.cpp
 
+FindMinRotate.o : $(USER_DIR)/FindMinRotate.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/FindMinRotate.cpp
+
 unittest.o : $(USER_DIR)/unittest.cpp $(USER_DIR)/all_functions.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/unittest.cpp
 
-unittest : CalSum.o CheckSort.o SumTwo.o IntToEng.o GCD.o unittest.o gtest_main.a
+unittest : CalSum.o CheckSort.o SumTwo.o IntToEng.o GCD.o FindMinRotate.o unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
